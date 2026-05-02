@@ -491,8 +491,8 @@ def giai_ma_SBD_Ma_De(ma_Tran, nguong_otsu):
 
 
 # Hàm chỉnh xử lý ảnh"""
-
-image_goc_ch_chinh = cv2.imread("PhieuQG.0049.jpg")
+duong_dan_anh_dau_vao = "PhieuQG.0049.jpg"
+image_goc_ch_chinh = cv2.imread(duong_dan_anh_dau_vao)
 if (image_goc_ch_chinh is None):
   print("ko co anh")
 
@@ -625,7 +625,7 @@ kq_Ma_de = doc_Ma_De(anh_ma_de_da_sua)
 import json
 import re
 
-def xuat_output_json(phan1, phan2, phan3, sbd, mdt):
+def xuat_output_json(phan1, phan2, phan3, sbd, mdt, duong_dan_anh_dau_vao):
 
 
     phan1 = [item for sublist in phan1 for item in sublist]
@@ -655,7 +655,7 @@ def xuat_output_json(phan1, phan2, phan3, sbd, mdt):
     }
 
     output = [{
-        "org": "",
+        "org": duong_dan_anh_dau_vao,
         "out": "",
         "warn": "",
         "err": [],
@@ -686,7 +686,8 @@ xuat_output_json(
     phan2,
     phan3,
     sbd,
-    kq_Ma_de
+    kq_Ma_de,
+    duong_dan_anh_dau_vao
 )
 
 """kho_dap_an.JSON demo file dap an
