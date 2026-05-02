@@ -491,10 +491,12 @@ def giai_ma_SBD_Ma_De(ma_Tran, nguong_otsu):
 
 
 # Hàm chỉnh xử lý ảnh"""
-duong_dan_anh_dau_vao = "PhieuQG.0049.jpg"
+duong_dan_anh_dau_vao = input("Nhap duong dan cua anh dau vao tai day: ")
+if (duong_dan_anh_dau_vao == ""):
+  raise Exception("Duong dan anh rong")
 image_goc_ch_chinh = cv2.imread(duong_dan_anh_dau_vao)
 if (image_goc_ch_chinh is None):
-  print("ko co anh")
+  raise Exception("Duong dan nay khong co anh")
 
 h, w = image_goc_ch_chinh.shape[:2]
 new_w = int(w * 0.96)
